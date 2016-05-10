@@ -14,30 +14,53 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hky-gc-gVA">
-                                <rect key="frame" x="18" y="20" width="564" height="31"/>
+                                <rect key="frame" x="14" y="20" width="347" height="31"/>
                                 <connections>
                                     <action selector="sliderListener:" destination="BYZ-38-t0r" eventType="valueChanged" id="lii-95-mwY"/>
                                 </connections>
                             </slider>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="znD-4g-FfW">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="dCD-3l-ln6">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dCD-3l-ln6" id="T90-1O-1Xk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="iEU-6R-qH3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3ma-Kj-fLH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="znD-4g-FfW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="3o0-r7-pTU"/>
                             <constraint firstItem="hky-gc-gVA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="PZV-d5-i48"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="znD-4g-FfW" secondAttribute="trailing" constant="-20" id="ZpT-6S-U0T"/>
                             <constraint firstItem="hky-gc-gVA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bCF-ey-BmF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="znD-4g-FfW" secondAttribute="bottom" id="cSu-wZ-RJ0"/>
+                            <constraint firstItem="znD-4g-FfW" firstAttribute="top" secondItem="hky-gc-gVA" secondAttribute="bottom" constant="8" id="gDH-eT-Jlm"/>
                             <constraint firstItem="hky-gc-gVA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mxd-5F-A25"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="sliderValue" destination="hky-gc-gVA" id="sd6-Ax-jq8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="353"/>
+            <point key="canvasLocation" x="304.5" y="352.5"/>
         </scene>
     </scenes>
 </document>

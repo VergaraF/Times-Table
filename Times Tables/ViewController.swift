@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
 
+    let maxValueForTableView = 20
     
     @IBOutlet var sliderValue: UISlider!
     
@@ -20,6 +21,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return maxValueForTableView
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default,reuseIdentifier: "Cell")
+        
+        let timesTableValue = Int(sliderValue.value * 20)
+        
+        cell.textLabel?.text = String(timesTableValue * indexPath.row)
+        
+        return cell
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
